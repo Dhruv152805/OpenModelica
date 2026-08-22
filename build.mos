@@ -1,0 +1,26 @@
+// build.mos
+// =========
+// OpenModelica build script for the TwoConnectedTanks model.
+//
+// Usage (from the project root, with omc on your PATH):
+//
+//   omc build.mos
+//
+// Output files placed in the current working directory:
+//   TwoConnectedTanks         (Linux/macOS executable)
+//   TwoConnectedTanks.exe     (Windows executable)
+//   TwoConnectedTanks_init.xml
+//
+// The _res.mat simulation output is written at runtime; do NOT commit it.
+
+// 1. Load the model source file.
+loadFile("TwoConnectedTanks.mo");
+
+// 2. Target plain C simulation code (default, but explicit for clarity).
+setCommandLineOptions("--simCodeTarget=C");
+
+// 3. Compile the model into a standalone executable.
+buildModel(TwoConnectedTanks);
+
+// 4. Print any compiler warnings/errors to stdout.
+getErrorString();
