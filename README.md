@@ -158,7 +158,3 @@ All source files carry full type hints and docstrings on every public class
 and method.
 
 ---
-
-## License
-
-MIT © 2025 — FOSSEE Screening Task submission.
